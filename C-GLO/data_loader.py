@@ -46,10 +46,9 @@ def data_loader(config):
     print('Loading data...')
     print('Loading positive data')
     for i in trange(p_num):
-        if config.is_train:
-            data = io.imread(dir_path_p + os.sep + dir_p[i])
-            data = imresize(data,[size,size,data.shape[2]])
-            img.append(data)
+        data = io.imread(dir_path_p + os.sep + dir_p[i])
+        data = imresize(data,[size,size,data.shape[2]])
+        img.append(data)
         label.append(1)
 
     print('Loading negative data')
@@ -60,8 +59,7 @@ def data_loader(config):
         label.append(0)
 
     label   = np.array(label,dtype = np.float32).reshape([-1,1])
-    if config.is_train:
-        img     = nhwc_to_nchw(np.array(img,dtype = np.float32))
+    img     = nhwc_to_nchw(np.array(img,dtype = np.float32))
 
     return img,label,p_num,n_num
 

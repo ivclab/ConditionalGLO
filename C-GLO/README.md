@@ -24,7 +24,7 @@ $ python main.py --is_train=True
 
 ```bash
 # The testing result will be saved in `./logs/FOLDER_NAME_test/`
-$ python main.py --is_train=False --load_path=MODEL_DIR
+$ python main.py --is_train=False --load_path=FOLDER_NAME
 ```
 
 ## Result
