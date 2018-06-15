@@ -44,14 +44,15 @@ def data_loader(config):
     img             = []
     label           = []
     print('Loading data...')
-    
+    print('Loading positive data')
     for i in trange(p_num):
         if config.is_train:
             data = io.imread(dir_path_p + os.sep + dir_p[i])
             data = imresize(data,[size,size,data.shape[2]])
             img.append(data)
         label.append(1)
-    
+
+    print('Loading negative data')
     for i in trange(n_num):
         data = io.imread(dir_path_n + os.sep + dir_n[i])
         data = imresize(data,[size,size,data.shape[2]])
