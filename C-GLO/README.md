@@ -27,7 +27,4 @@ $ python main.py --is_train=True
 $ python main.py --is_train=False --load_path=FOLDER_NAME
 ```
 
-## Result
-![alt tag](./assets/result1-1.png)
-
 
