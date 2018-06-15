@@ -1,7 +1,6 @@
 # Conditional-Generative-Latent-Optimization
 
-![test pdf1](./assets/cglo.pdf)
-
+![alt tag](./assets/cglo-1.png)
 ## Requirements
 
 
@@ -27,6 +26,6 @@ $ python main.py --is_train=False --load_path=MODEL_DIR
 ```
 
 ## Result
-![alt tag](./assets/result1.pdf)
-![alt tag](./assets/result2.pdf)
+![alt tag](./assets/result1-1.png)
+![alt tag](./assets/result2-1.png)
 
