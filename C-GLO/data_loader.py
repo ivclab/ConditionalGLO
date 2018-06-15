@@ -26,6 +26,7 @@ from scipy.misc import imresize
 import os
 import skimage.io as io
 import warnings
+from tqdm import trange
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 def data_loader(config):
@@ -43,22 +44,27 @@ def data_loader(config):
     img             = []
     label           = []
     print('Loading data...')
-    for i in range(p_num):
-        data = io.imread(dir_path_p + os.sep + dir_p[i])
-        data = imresize(data,[size,size,data.shape[2]])
-        img.append(data)
+    
+    for i in trange(p_num):
+        if config.is_train:
+            data = io.imread(dir_path_p + os.sep + dir_p[i])
+            data = imresize(data,[size,size,data.shape[2]])
+            img.append(data)
         label.append(1)
     
-    for i in range(n_num):
+    for i in trange(n_num):
         data = io.imread(dir_path_n + os.sep + dir_n[i])
         data = imresize(data,[size,size,data.shape[2]])
         img.append(data)
         label.append(0)
 
     label   = np.array(label,dtype = np.float32).reshape([-1,1])
-    img     = nhwc_to_nchw(np.array(img,dtype = np.float32))
+    if config.is_train:
+        img     = nhwc_to_nchw(np.array(img,dtype = np.float32))
 
     return img,label,p_num,n_num
+
+
 
 def nhwc_to_nchw(x):
     return np.transpose(x, [0, 3, 1, 2])

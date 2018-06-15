@@ -29,5 +29,5 @@ $ python main.py --is_train=False --load_path=MODEL_DIR
 
 ## Result
 ![alt tag](./assets/result1-1.png)
-![alt tag](./assets/result2-1.png)
+
 
