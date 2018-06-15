@@ -1,4 +1,4 @@
-### Mixed-Bg-Fg-Synthesis
+# Mixed-Bg-Fg-Synthesis
 Official Implementation of Changing Background to Foreground: An Augmentation Method Based on Conditional Generative Network for Stingray Detection
 
 ## Usage
