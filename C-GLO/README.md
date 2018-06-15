@@ -1,6 +1,6 @@
 # Conditional-Generative-Latent-Optimization
 
-![very good](./assets/cglo-1.png =250*250)
+![alt tag](./assets/cglo-1.png)
 
 
 ## Requirements
