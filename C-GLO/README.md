@@ -3,8 +3,6 @@
 ![alt tag](./assets/cglo-1.png)
 
 
-## Requirements
-
 
 ## How to run
 - Download Stingray Data:
