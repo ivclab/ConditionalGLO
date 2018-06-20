@@ -51,7 +51,7 @@ def main(config):
         batch_size = config.batch_size
 
     else:
-        setattr(config, 'batch_size', 64)
+        setattr(config, 'batch_size', 1)
 
 
     trainer = Trainer(config)

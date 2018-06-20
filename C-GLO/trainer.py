@@ -160,40 +160,56 @@ class Trainer(object):
         ])
 
     def test(self):
+        dir_path_n      = self.config.n_data_dir
+        dir_n           = os.listdir(dir_path_n)
+        dir_n.sort()
+        for i in range(len(dir_n)):
+            dir_n[i]=dir_n[i].split('.')
         path = self.model_dir+'_test/'
         if not os.path.exists(path):
             os.makedirs(path)
+        
         for step in range(self.p_num/self.batch_size, self.data_num/self.batch_size):
             batch   = np.arange(self.batch_size) + (self.batch_size*step)
-            x_condi = self.generate_condition(batch,path, idx=step)
-            x_real  = self.generate_real(batch,path, idx=step)
+            x_condi = self.generate_condition(batch,path, idx=step,is_train=False,name=dir_n[step-self.p_num/self.batch_size][0])
+            x_real  = self.generate_real(batch,path, idx=step,is_train=False,name=dir_n[step-self.p_num/self.batch_size][0])
 
-    def generate(self,input,root_path=None, path=None, idx=None, save=True):
+    def generate(self,input,root_path=None, path=None, idx=None, is_train=True,name=None):
         
         x = self.sess.run(self.G,feed_dict={self.CONDITION:self.condition[input],self.INDEX:input})
-        if path is None and save:
+        if path is None and is_train:
             path = os.path.join(root_path, '{}_G.png'.format(idx))
             save_image(x, path)
             print("[*] Samples saved: {}".format(path))
         return x
     
-    def generate_condition(self,input,root_path=None, path=None, idx=None, save=True):
+    def generate_condition(self,input,root_path=None, path=None, idx=None, is_train=True,name=None):
         # change conditional label
         x = self.sess.run(self.G,feed_dict={self.CONDITION:switch_condition(self.condition[input]),self.INDEX:input})
-        if path is None and save:
+        if path is None and is_train:
             path = os.path.join(root_path, '{}_G_condition.png'.format(idx))
             save_image(x, path)
             print("[*] Samples saved: {}".format(path))
+        else:
+            path = os.path.join(root_path, '{}.png'.format(name))
+            save_image(x, path, nrow=1, padding=0,is_train=is_train)
+            print("[*] Samples saved: {}".format(path))
         return x
 
 
-    def generate_real(self,input, root_path=None, path=None, idx=None, save=True):
+    def generate_real(self,input, root_path=None, path=None, idx=None, is_train=True,name=None):
         x = self.sess.run(self.y,feed_dict={self.X_REAL:self.img[input]})
-        if path is None and save:
+        if path is None and is_train:
             path = os.path.join(root_path, '{}_G_real.png'.format(idx))
             save_image(x, path)
             print("[*] Samples saved: {}".format(path))
+        else:
+            path = os.path.join(root_path, '{}_real.png'.format(name))
+            save_image(x, path, nrow=1, padding=0,is_train=is_train)
+            print("[*] Samples saved: {}".format(path))
         return x
+    
+
     
     
     
