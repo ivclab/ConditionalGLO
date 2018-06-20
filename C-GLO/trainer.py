@@ -164,7 +164,7 @@ class Trainer(object):
         dir_n           = os.listdir(dir_path_n)
         dir_n.sort()
         for i in range(len(dir_n)):
-            dir_n[i]=dir_n[i].split('.')
+            dir_n[i]=dir_n[i].split('.jpg')
         path = self.model_dir+'_test/'
         if not os.path.exists(path):
             os.makedirs(path)
