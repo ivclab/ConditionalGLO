@@ -17,13 +17,13 @@ $ pip install -r requirements.txt
 $ python download.py
 ```
 
-- run the training code:
+- Run the training code:
 ```bash
 # The training result will be saved in `./logs/FOLDER_NAME/`
 $ python main.py --is_train=True
 ```
 
-- run the testing code:
+- Run the testing code:
 ```bash
 # The testing result will be saved in `./logs/FOLDER_NAME_test/`
 $ python main.py --is_train=False --load_path=FOLDER_NAME
