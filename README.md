@@ -11,7 +11,7 @@ Created by [Yi-Min Chou](https://github.com/yyyjoe), Chien-Hung Chen, Keng-Hao L
 
 1.Clone the Mixed-Bg-Fg-Synthesis repository:
 
-    $ git clone --recursive https://github.com/ivclab/Mixed-Bg-Fg-Synthesis.git
+    $ git clone --recursive https://github.com/ivclab/ConditionalGLO.git
 
 
 2.Follow the instruction in [C-GLO](https://github.com/ivclab/Mixed-Bg-Fg-Synthesis/tree/master/C-GLO) and get the augmented training data.
