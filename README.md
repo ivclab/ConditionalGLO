@@ -4,7 +4,7 @@ Official Implementation of [Stingray Detection of Aerial Images Using Augmented 
 Created by [Yi-Min Chou](https://github.com/yyyjoe), Chien-Hung Chen, Keng-Hao Liu, Chu-Song Chen
 
 ## Usage
-    Mixed-Bg-Fg-Synthesis
+    ConditionalGLO
             ├──────────── C-GLO
             └──────────── Detection
 
