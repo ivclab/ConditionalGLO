@@ -39,4 +39,4 @@ Please cite following paper if these codes help your research:
     }
 
 ## Contact
-Please feel free to leave suggestions or comments to [Yi-Min Chou](https://github.com/yyyjoe), Chien-Hung Chen(redsword26@iis.sinica.edu.tw), Keng-Hao Liu(keng3@mail.nsysu.edu.tw), Chu-Song Chen(song@iis.sinica.edu.tw)
+Please feel free to leave suggestions or comments to [Yi-Min Chou](https://github.com/yyyjoe), Chien-Hung Chen(redsword26@gmail.com), Keng-Hao Liu(keng3@mail.nsysu.edu.tw), Chu-Song Chen(song@iis.sinica.edu.tw)
